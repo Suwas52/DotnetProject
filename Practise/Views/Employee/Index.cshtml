@@ -1,0 +1,41 @@
+﻿@model List<Practise.Models.Employee>
+
+
+@{
+    ViewBag.Title = "Index";
+    int id = 0;
+}
+<a href="@Url.Action("create")" style="color:darkgreen"> Add new Record</a>
+<h3>Database Table Display</h3>
+
+<style>
+    table{
+        border:3px solid black;
+        padding:4px;
+        background-color:aqua
+    }
+</style>
+
+
+<h2>Index</h2>
+<table class="table" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Salary</th>
+    </tr>
+
+    @foreach (var Employee in Model)
+	{
+        <tr>
+            <td>@(++id)</td>
+            <td>@(Employee.Name)</td>
+            <td>@(Employee.Address)</td>
+            <td>@(Employee.Salary)</td>
+
+        </tr>
+	}
+
+</table>
+
