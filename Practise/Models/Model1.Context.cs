@@ -27,5 +27,10 @@ namespace Practise.Models
     
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<std_tbl> std_tbl { get; set; }
+
+        internal void updateChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

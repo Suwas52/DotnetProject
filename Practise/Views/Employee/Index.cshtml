@@ -34,6 +34,8 @@
             <td>@(Employee.Address)</td>
             <td>@(Employee.Salary)</td>
 
+            <td><a href="@Url.Action("Edit", new {ID=Employee.ID })">Edit</a></td>
+
         </tr>
 	}
 

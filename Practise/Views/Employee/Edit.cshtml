@@ -1,32 +1,21 @@
-﻿
+﻿@model Practise.Models.Employee
 @{
-    ViewBag.Title = "create";
+    ViewBag.Title = "Edit";
 }
 
-<h2>create</h2>
-<style>
-    .empform{
-        background-color:aquamarine
-    }
-    input[type=text]{
-        background-color:rebeccapurple
-    }
-    input[type=submit] {
-        margin-bottom:10px
-    }
-        input[type=submit]:hover {
-            background-color: springgreen
-        }
-</style>
+<h2>Edit</h2>
 
+
+
+@using (Html.BeginForm("UpdateData", "Employee"))
+{ 
 <div class="empform">
-    <fieldset>
-
-        <legend>Employee Form</legend>
-        <form action="Savadata">
-
+  
+    <form>
+       
 
 
+        <input type="hidden" name="ID" value="@Model.ID" />
             <label class="col-md-12">Name</label>
             <div class="col-md-12">
                 <input type="text" name="name" class="form-control" />
@@ -49,5 +38,6 @@
 
 
         </form>
-    </fieldset>
+   
 </div>
+}
