@@ -14,9 +14,18 @@ namespace Practise.Models
     
     public partial class Employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.employee_salary_details = new HashSet<employee_salary_details>();
+        }
+    
         public int ID { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public int Salary { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<employee_salary_details> employee_salary_details { get; set; }
     }
 }

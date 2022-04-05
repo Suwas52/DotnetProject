@@ -10,12 +10,13 @@ namespace Practise.Controllers
 {
     public class EmployeeController : Controller
     {
-        employeeEntities db;
+
+        mainEntities1 db;
         private object data;
 
         public EmployeeController()
         {
-             db = new employeeEntities();
+             db = new mainEntities1();
         }
         // GET: Employee0
         public ActionResult Index()
@@ -36,9 +37,9 @@ namespace Practise.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int ID)
         {
-            Employee data = db.Employees.Find(id);
+            Employee data = db.Employees.Find(ID);
             return View(data);
         }
         public ActionResult UpdateData(Employee Emp)
@@ -46,7 +47,7 @@ namespace Practise.Controllers
             db.Entry(Emp).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
-           ;
+            ;
         }
 
 

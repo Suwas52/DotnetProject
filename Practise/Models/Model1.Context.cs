@@ -13,10 +13,10 @@ namespace Practise.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class employeeEntities : DbContext
+    public partial class mainEntities1 : DbContext
     {
-        public employeeEntities()
-            : base("name=employeeEntities")
+        public mainEntities1()
+            : base("name=mainEntities1")
         {
         }
     
@@ -26,11 +26,8 @@ namespace Practise.Models
         }
     
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<employee_salary_details> employee_salary_details { get; set; }
         public virtual DbSet<std_tbl> std_tbl { get; set; }
-
-        internal void updateChanges()
-        {
-            throw new NotImplementedException();
-        }
+        public virtual DbSet<student> students { get; set; }
     }
 }

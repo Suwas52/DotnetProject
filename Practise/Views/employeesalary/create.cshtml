@@ -1,0 +1,56 @@
+﻿@model Practise.Models.employee_salary_details
+@{
+    ViewBag.Title = "create";
+}
+
+<h2>create</h2>
+
+<style>
+    .empform {
+        background-color: aquamarine;
+        color: white;
+    }
+
+    input[type=text] {
+        background-color: rebeccapurple;
+        color: white;
+    }
+
+    input[type=submit] {
+        margin-bottom: 10px;
+    }
+
+        input[type=submit]:hover {
+            background-color: springgreen;
+        }
+</style>
+
+@*<form action="Savadata">*@
+@using (@Html.BeginForm("Create", "employeesalary", FormMethod.Post))
+{
+    <div class="form-horizontal">
+         <div class="form-group">
+              <label>Employee Name</label>
+        </div>
+        @Html.DropDownList("employeesalaryList", null, "Select", htmlAttributes: new { @Name = "employee_id", @class = "form-control" })
+        
+    </div>
+
+    <label class="col-md-12">Salary_paid: </label>
+    <br />
+    <div class="col-md-12">
+        <input type="text" name="salary_paid" class="form-control" />
+    </div>
+
+    <label class="col-md-12">Paid_date</label>
+    <br />
+    <div class="col-md-12">
+        <input type="datetime" name="paid_date" class="form-control" />
+    </div>
+    <br />
+
+    <div class="col-md-12">
+        <input type="submit" name="submit" class="btn btn-success" />
+    </div>
+}
+@*</form>*@

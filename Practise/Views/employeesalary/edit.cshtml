@@ -1,34 +1,21 @@
 ﻿
+@model Practise.Models.employee_salary_details
 @{
-    ViewBag.Title = "create";
+    ViewBag.Title = "edit";
 }
 
-<h2>create</h2>
-<style>
-    .empform{
-        background-color:aquamarine;
-        color: white;
-    }
-    input[type=text]{
-        background-color:rebeccapurple;
-        color: white;
-    }
-    input[type=submit] {
-        margin-bottom:10px;
-    }
-        input[type=submit]:hover {
-            background-color: springgreen;
-        }
-</style>
+<h2>edit</h2>
 
-<div class="empform">
-    <fieldset>
 
-        <legend>Employee Form</legend>
-        <form action="Savadata">
+@using (Html.BeginForm("UpdateData", "employeesalary"))
+{
+    <div class="empform">
+
+        <form>
 
 
 
+            <input type="hidden" name="id" value="@Model.id" />
             <label class="col-md-12">Name</label>
             <div class="col-md-12">
                 <input type="text" name="name" class="form-control" />
@@ -51,5 +38,6 @@
 
 
         </form>
-    </fieldset>
-</div>
+
+    </div>
+}

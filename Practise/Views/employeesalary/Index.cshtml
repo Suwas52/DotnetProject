@@ -1,0 +1,43 @@
+﻿@model List<Practise.Models.employee_salary_details>
+
+
+@{
+    ViewBag.Title = "Index";
+    int id = 0;
+}
+<h2>Index</h2>
+
+<a href="@Url.Action("create")" style="color:darkgreen"> Add new Record</a>
+<h3>Database Table Display</h3>
+
+<style>
+    table {
+        border: 3px solid black;
+        padding: 4px;
+        background-color: aqua
+    }
+</style>
+
+
+<h2>Index</h2>
+<table class="table" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Salary</th>
+    </tr>
+
+    @foreach (var employee_salary_details in Model)
+    {
+        <tr>
+            <td>@(employee_salary_details.employee_id)</td>
+            <td>@(employee_salary_details.salary_paid)</td>
+            <td>@employee_salary_details.paid_date)</td>
+
+            <td><a href="@Url.Action("Edit", new {ID=employee_salary_details.id })">Edit</a></td>
+
+        </tr>
+    }
+
+</table>

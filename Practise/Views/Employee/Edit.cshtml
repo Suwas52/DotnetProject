@@ -6,13 +6,8 @@
 <h2>Edit</h2>
 
 
-
 @using (Html.BeginForm("UpdateData", "Employee"))
 { 
-<div class="empform">
-  
-    <form>
-       
 
 
         <input type="hidden" name="ID" value="@Model.ID" />
@@ -33,11 +28,7 @@
 
 
             <div class="col-md-12">
-                <input type="submit" value="Submit" class="btn btn-success" />
+                <input style="margin-top:12px" type="submit" name="submit" class="btn btn-success" value="save" id="submit" />
             </div>
 
-
-        </form>
-   
-</div>
 }
